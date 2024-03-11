@@ -11,12 +11,18 @@ class User:
         data_limit: float,
         data_limit_reset_strategy: str,
         status="",
+        note="",
         used_traffic=0,
         lifetime_used_traffic=0,
         created_at="",
         links=[],
         subscription_url="",
         excluded_inbounds={},
+        sub_updated_at="",
+        sub_last_user_agent="",
+        online_at="",
+        on_hold_expire_duration="",
+        on_hold_timeout="",
     ):
         self.username = username
         self.proxies = proxies
@@ -25,6 +31,7 @@ class User:
         self.data_limit = data_limit
         self.data_limit_reset_strategy = data_limit_reset_strategy
         self.status = status
+        self.note = note
         self.used_traffic = used_traffic
         self.lifetime_used_traffic = lifetime_used_traffic
         self.created_at = created_at
