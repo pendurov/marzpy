@@ -6,23 +6,23 @@ class User:
         self,
         username: str,
         proxies: dict,
-        inbounds: dict,
-        expire: float,
+        inbounds: dict,  
         data_limit: float,
-        data_limit_reset_strategy: str,
+        data_limit_reset_strategy: str = "no_reset",
         status="",
-        note="",
+        expire: float = 0,
         used_traffic=0,
         lifetime_used_traffic=0,
         created_at="",
         links=[],
         subscription_url="",
         excluded_inbounds={},
-        sub_updated_at="",
-        sub_last_user_agent="",
-        online_at="",
-        on_hold_expire_duration="",
-        on_hold_timeout="",
+        note = "",
+        on_hold_timeout= 0,
+        on_hold_expire_duration = 0,
+        sub_updated_at = 0,
+        online_at = 0,
+        sub_last_user_agent:str = ""
     ):
         self.username = username
         self.proxies = proxies
@@ -31,13 +31,18 @@ class User:
         self.data_limit = data_limit
         self.data_limit_reset_strategy = data_limit_reset_strategy
         self.status = status
-        self.note = note
         self.used_traffic = used_traffic
         self.lifetime_used_traffic = lifetime_used_traffic
         self.created_at = created_at
         self.links = links
         self.subscription_url = subscription_url
         self.excluded_inbounds = excluded_inbounds
+        self.note = note
+        self.on_hold_timeout = on_hold_timeout
+        self.on_hold_expire_duration = on_hold_expire_duration
+        self.sub_last_user_agent = sub_last_user_agent
+        self.online_at = online_at
+        self.sub_updated_at = sub_updated_at
 
 
 class UserMethods:
